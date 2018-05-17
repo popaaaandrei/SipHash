@@ -14,7 +14,9 @@ let package = Package(
     products: [
         .library(name: "SipHash", type: .dynamic, targets: ["SipHash"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/dudash/swift-package-clibbsd.git", from: "1.0.0"),
+    ],
     targets: [
         .target(name: "SipHash", dependencies: [], path: "SipHash"),
         .testTarget(name: "SipHashTests", dependencies: ["SipHash"], path: "SipHashTests")

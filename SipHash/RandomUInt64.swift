@@ -13,10 +13,10 @@
         return UInt64(arc4random()) << 32 | UInt64(arc4random())
     }
 #elseif os(Linux)
-    import SwiftShims
+    import ClibBSD
 
     func randomUInt64() -> UInt64 {
-        return UInt64(_swift_stdlib_cxx11_mt19937()) << 32 | UInt64(_swift_stdlib_cxx11_mt19937())
+        return UInt64(arc4random()) << 32 | UInt64(arc4random())
     }
 #else
     func randomUInt64() -> UInt64 {
